@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const API_URL = "https://api.github.com/users"
 
 class Form {
@@ -29,8 +31,12 @@ class Form {
   handleSubmit(event) {
     event.preventDefault();
     console.log(event);
+    axios
+      .get(this.API_URL)
+      .then(res => console.log(res.data)) // ({data} => console.log(data) )
+      .catch((err) => console.log('Promise rejected!', err));
+    this.form.reset(); // empty form inputs
   }
-
 }
 
 export default Form;
