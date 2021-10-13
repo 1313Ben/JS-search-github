@@ -12,3 +12,8 @@
    padding: 1em;
    margin: 1em;
  }
+ 
+ img {
+  height: 150px;
+  border-radius: 75px;
+ }
