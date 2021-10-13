@@ -10,3 +10,6 @@ npm install --save-dev babel-core@6.26.3 babel-loader@7.1.4 babel-preset-env@1.7
 
 // deleting a folder in origin repo ex. node_modules
  git rm -r --cached node_modules 
+
+// http-client for api requests 
+$ npm install axios
