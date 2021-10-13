@@ -3,7 +3,11 @@ import axios from 'axios';
 const API_URL = "https://api.github.com/users"
 
 class Form {
-  constructor() {
+  constructor(addCard) {
+    this.addCard = addCard;
+
+    console.log(this.addCard);
+
     this.API_URL = "";
     this.searchTerm = "";
     this.searchInput = document.querySelector('input[name = "search"]');
@@ -33,7 +37,7 @@ class Form {
     console.log(event);
     axios
       .get(this.API_URL)
-      .then(res => console.log(res.data)) // ({data} => console.log(data) )
+      .then(res => this.addCard(res.data)) // ({data} => console.log(data) )
       .catch((err) => console.log('Promise rejected!', err));
     this.form.reset(); // empty form inputs
   }
