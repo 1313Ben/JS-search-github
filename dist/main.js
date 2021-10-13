@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/Form.js":
+/*!*********************!*\
+  !*** ./src/Form.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar API_URL = \"https://api.github.com/users\";\n\nvar Form = function () {\n  function Form() {\n    var _this = this;\n\n    _classCallCheck(this, Form);\n\n    this.API_URL = \"\";\n    this.searchTerm = \"\";\n    this.searchInput = document.querySelector('input[name = \"search\"]');\n    this.searchInput.addEventListener('keyup', function (event) {\n      return _this.handleKeyup(event);\n    });\n  }\n\n  _createClass(Form, [{\n    key: \"handleKeyup\",\n    value: function handleKeyup(event) {\n      // console.log('key is pressed');\n      // console.log(event);\n      this.searchTerm = event.target.value.trim(); // trim removes whitespace\n      this.API_URL = API_URL + \"/\" + this.searchTerm;\n      console.log(this.API_URL);\n    }\n  }]);\n\n  return Form;\n}();\n\nexports.default = Form;\n\n//# sourceURL=webpack:///./src/Form.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -94,19 +106,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _test = __webpack_require__(/*! ./test */ \"./src/test.js\");\n\nvar _test2 = _interopRequireDefault(_test);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\ndocument.querySelector('#root').innerText = _test2.default;\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/test.js":
-/*!*********************!*\
-  !*** ./src/test.js ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar text = \"Hello World\";\n\nexports.default = text;\n\n//# sourceURL=webpack:///./src/test.js?");
+eval("\n\nvar _Form = __webpack_require__(/*! ./Form */ \"./src/Form.js\");\n\nvar _Form2 = _interopRequireDefault(_Form);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar form = new _Form2.default();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

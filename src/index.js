@@ -1,3 +1,3 @@
-import text from "./test";
+import Form from "./Form";
 
-document.querySelector('#root').innerText = text;
+const form = new Form();
