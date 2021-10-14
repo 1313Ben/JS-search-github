@@ -3,8 +3,9 @@ import axios from 'axios';
 const API_URL = "https://api.github.com/users"
 
 class Form {
-  constructor(addCard) {
+  constructor(addCard, clearCards) {
     this.addCard = addCard;
+    this.clearCards = clearCards;
 
     console.log(this.addCard);
 
@@ -17,6 +18,10 @@ class Form {
     //   this.submitButton.disabled = true;
     // }
     // submitButton is disabled if searchTerm is empty
+
+    this.clearButton = document.querySelector('button[type = "button"]');
+    this.clearButton.addEventListener('click', () => this.clearCards());
+
     this.submitButton.disabled = !this.searchTerm;
 
     this.form = document.querySelector('form');
@@ -28,6 +33,7 @@ class Form {
    // console.log(event);
     this.searchTerm = event.target.value.trim(); // trim removes whitespace
     this.API_URL = `${API_URL}/${this.searchTerm}`;
+    console.log(API_URL);
     console.log(this.API_URL);
     this.submitButton.disabled = !this.searchTerm;
   }
